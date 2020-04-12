@@ -1,8 +1,19 @@
---- 
-- 
-  hosts: all
-  name: "deploying httpd"
-  tasks: 
-    name: "install httpd*"
-    yum: "name=httpd state=latest"
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: installing git
+    apt:
+      name: git
+      state: present
+      update_cache: yes
+  - name: installing tree
+    apt:
+      name: git
+      state: present
+  - name: installing apache2
+    yum:
+      name: apache2 
+      state: present
+
 
