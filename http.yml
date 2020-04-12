@@ -1,5 +1,5 @@
 ---
-- hosts: appgroup
+- hosts: ubuntuserver
   become: yes
   tasks:
   - name: installing git
@@ -12,7 +12,7 @@
       name: git
       state: present
   - name: installing apache2
-    yum:
+    apt:
       name: apache2 
       state: present
 
